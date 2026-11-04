@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 21342,
+  "stop_reason": "end_turn",
+  "session_id": "514a1698-e27a-43cd-ba9c-3cac9aeed2a2",
+  "total_cost_usd": 0.16083560000000002,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 23542,
+    "cache_read_input_tokens": 126198,
+    "output_tokens": 1970,
+    "output_tokens_details": {
+      "thinking_tokens": 251
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23542,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 602,
+        "cache_read_input_tokens": 32994,
+        "cache_creation_input_tokens": 478,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 478
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1970,
+      "cacheReadInputTokens": 126198,
+      "cacheCreationInputTokens": 23542,
+      "webSearchRequests": 0,
+      "costUSD": 0.13913160000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 251,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 10414,
+      "outputTokens": 258,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.021704,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The premise isn't right: more agents don't always give better results. For your assistant, the answer to \"five or ten?\" is probably neither. Start with one agent.\n\nAnthropic's engineers measured the cost. Agents use about 4× the tokens of a plain chat, and multi-agent systems use about 15×. Their multi-agent setup helped on large research tasks mainly because it spent more tokens on the problem. That only pays off when the task is valuable enough to cover the cost. Your sponsor gave you a small model budget, so cost per request is a real constraint here.\n\nHere is the idea with your own requests. A student asks, \"How do I set the laser cutter for 3 mm acrylic?\" The assistant searches the manual, reads a page and answers. A student asks, \"Book me the 3D printer Thursday.\" The assistant checks the calendar and books it. Neither request has independent pieces that need to run in parallel. Splitting them across agents would add hand-offs, repeated context and extra model calls without making the answer better.\n\nMulti-agent designs tend to pay off when the work is broad, can be split into parts that run in parallel, and doesn't fit in one context window. Your assistant mostly looks things up and books time, so a single agent with a few well-described tools fits. Parts of it can be fixed workflow steps, such as always checking a student's training status before a booking.\n\nFor your design review, you could say: \"We start with one agent and add a second only when we can show a task it can't handle, and the gain is worth about 15× the tokens.\"\n\nQuick check: why would ten agents cost more per request than one, even if each agent's job is small?\n\nIf you'd like, I can turn this into a lesson on workflows versus agents and when multi-agent pays off.\n\nSources: [How we built our multi-agent research system (Anthropic)](https://www.anthropic.com/engineering/multi-agent-research-system)",
+  "ttft_ms": 1730,
+  "type": "result",
+  "duration_ms": 21437,
+  "uuid": "a8987f83-d8e6-40bc-ae86-bb1aa0e25467",
+  "ttft_stream_ms": 1253,
+  "time_to_request_ms": 43,
+  "first_content_frame_ms": 1253,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 25851,
+  "stop_reason": "end_turn",
+  "session_id": "c2b23793-f24d-4526-88e2-ecf250c84663",
+  "total_cost_usd": 0.175962,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 29299,
+    "cache_read_input_tokens": 98200,
+    "output_tokens": 3911,
+    "output_tokens_details": {
+      "thinking_tokens": 185
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29299,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 505,
+        "cache_read_input_tokens": 36738,
+        "cache_creation_input_tokens": 2491,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2491
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3911,
+      "cacheReadInputTokens": 98200,
+      "cacheCreationInputTokens": 29299,
+      "webSearchRequests": 0,
+      "costUSD": 0.175962,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 185,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 16,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded Riley's submission `s1` for quiz 0001 and wrote the grades to `grades/0001-s1.json`. Riley got 2 items correct, 2 partial and 2 wrong.\n\n| Item | Verdict | Feedback |\n|---|---|---|\n| q1 | correct | The loop is what makes a system an agent. |\n| q2 | wrong (M4) | Riley chose \"the model opens the booking system\". The model only writes a tool request, and the program runs the tool. |\n| q3 | correct | A step limit is the right safeguard. |\n| q4 | wrong (M4) | Riley answered 1 call. The answer is 4: three tool requests plus the final answer. |\n| q5 | partial | \"Sends it back to the model\" is right, but the reason is missing. The model needs the result to choose its next step or write the answer. |\n| q6 | partial (M3) | Riley was right that the model picks tools from their descriptions. Riley was wrong that it remembers past tool choices on its own across sessions. |\n\n**What to work on:** the model only writes a request for a tool, and the program runs it and returns the result. The model also has no memory of its own between sessions.\n\n**Next step:** Riley should trace the makerspace example on paper with two columns, \"model writes\" and \"program does\", and count the model calls. That sets up the context and memory lesson.\n\nI also added `learning-records/0003-who-runs-the-tools.md` for the two open misconceptions, and updated `NOTES.md`.\n\n`submissions/s2.json` is still ungraded.",
+  "ttft_ms": 1963,
+  "type": "result",
+  "duration_ms": 25938,
+  "uuid": "1cbe740f-b283-4810-a8ab-4ccc70375b6c",
+  "ttft_stream_ms": 1219,
+  "time_to_request_ms": 33,
+  "first_content_frame_ms": 1219,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

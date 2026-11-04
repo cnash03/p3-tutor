@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant has just finished answering a student in a chat, and the program then makes a new model call for the student's next message. Which statement about what the model knows of the earlier messages is correct?",
+      "options": [
+        {"id": "a", "text": "It knows them only if the program includes them in the new call"},
+        {"id": "b", "text": "It knows them because the model stores each chat as it ends"},
+        {"id": "c", "text": "It knows them because the context window persists between calls"},
+        {"id": "d", "text": "It knows them for a short time, until the window fills up"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent has a fixed part (system prompt plus tool descriptions) of 1,000 tokens. The student's question adds 100 tokens. Each of the 3 tool results adds 500 tokens to the history, and the program sends the whole history on every model call. The model calls are: call 1 before any result, call 2 after one result, call 3 after two results, call 4 after three results. Ignoring the model's own output, how many input tokens are sent in total across all 4 calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student mentions in Monday's chat that they are red-green colour blind and want colour-coded wiring labels avoided. The next chat on Friday is a new session. What must happen for the assistant to take this into account on Friday?",
+      "options": [
+        {"id": "a", "text": "Nothing; the model carries the fact into any later chat"},
+        {"id": "b", "text": "The window must be large enough to hold the whole week"},
+        {"id": "c", "text": "The fact must be saved outside the context, then read in"},
+        {"id": "d", "text": "The shared system prompt must list every student's facts"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your team proposes pasting all 30 machine manuals into the context on every call, since the model's window is big enough to hold them. In one or two sentences, give one reason this is still a poor design."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks, \"What blade tension do I use for the bandsaw when cutting 10 mm aluminium?\" You have 30 long manuals. Which design best answers from the right page while keeping cost per request low?",
+      "options": [
+        {"id": "a", "text": "A search tool returns the few best-matching passages as a result"},
+        {"id": "b", "text": "A system prompt that holds a one-line summary of each manual"},
+        {"id": "c", "text": "A notes file where the model saves every manual it has read"},
+        {"id": "d", "text": "A fresh session for each manual, loaded in full one by one"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 17815,
+  "stop_reason": "end_turn",
+  "session_id": "f2ca095e-d8bd-4ac7-9799-fa3cfe79df6f",
+  "total_cost_usd": 0.12120639999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22378,
+    "cache_read_input_tokens": 61412,
+    "output_tokens": 1940,
+    "output_tokens_details": {
+      "thinking_tokens": 257
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22378,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 523,
+        "cache_read_input_tokens": 31296,
+        "cache_creation_input_tokens": 1012,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1012
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1940,
+      "cacheReadInputTokens": 61412,
+      "cacheCreationInputTokens": 22378,
+      "webSearchRequests": 0,
+      "costUSD": 0.12120639999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 257,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that's not right, and it's good you checked before designing around it. A language model doesn't remember anything on its own between conversations. It also doesn't remember earlier turns inside one conversation unless they're sent to it again.\n\n**A concrete example.** A student tells your assistant on Monday, \"I finished the laser cutter training.\" On Friday they ask, \"Can I book the laser cutter?\" Your code makes a fresh call to the model. If that call contains only Friday's question, the model has no idea about Monday. It isn't forgetting, because it never had that information in the first place. The model only sees the text in the current request, its context.\n\n**Why it feels like memory.** Chatbots seem to remember because the app resends the whole conversation with every new message. The memory lives in the app, not the model.\n\n**What this means for your design.** Remembering a student is something you build:\n1. Save the facts that matter (training status, equipment they've used) in a file or database, keyed by student.\n2. At the start of a session, look up that student and put the relevant facts into the context.\n3. Let the model update the record, or have your code do it, when something new comes up.\n\nThis is your \"what to save between sessions\" decision from your mission. Two things to weigh: every fact you load costs tokens on every request, so load only what's relevant. And you'd be storing what students tell the assistant, so decide what's worth keeping and tell students you're keeping it.\n\nQuick check: if a student chats with the assistant for ten turns, what does your code have to send to the model on turn ten for it to know what was said on turn three?\n\nI can turn this into a lesson on context and memory, which is the next topic in your mission. Want that?",
+  "ttft_ms": 3391,
+  "type": "result",
+  "duration_ms": 17886,
+  "uuid": "73a1bc26-a2b6-48fa-b26f-4dc2fb56a92d",
+  "ttft_stream_ms": 2736,
+  "time_to_request_ms": 31,
+  "first_content_frame_ms": 2736,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

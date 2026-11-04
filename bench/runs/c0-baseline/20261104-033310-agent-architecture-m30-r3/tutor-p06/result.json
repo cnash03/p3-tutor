@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 18785,
+  "stop_reason": "end_turn",
+  "session_id": "b4d71ed5-eaa0-4116-8a8b-edbdcf1f49b4",
+  "total_cost_usd": 0.131399,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 22740,
+    "cache_read_input_tokens": 93065,
+    "output_tokens": 2181,
+    "output_tokens_details": {
+      "thinking_tokens": 657
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22740,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 539,
+        "cache_read_input_tokens": 31714,
+        "cache_creation_input_tokens": 956,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 956
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2181,
+      "cacheReadInputTokens": 93065,
+      "cacheCreationInputTokens": 22740,
+      "webSearchRequests": 0,
+      "costUSD": 0.131399,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 657,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture a manager in a sealed office with no phone, no computer and no door. The only way out is a slot in the wall. The manager is very smart, but can only read and write notes.\n\nOutside is a runner. On the office wall is a menu of errands the runner can do, such as \"Check the booking calendar (needs: machine, day)\" and \"Book a slot (needs: machine, day, time, student)\".\n\nSay a student asks, \"Is the laser cutter free Friday?\" The note goes through the slot. The manager can't check the calendar, so they write on a slip: **\"Run errand: check calendar, laser cutter, Friday.\"** The runner reads the slip, walks to the calendar, and does the errand. The runner then slides back a slip: \"Booked 2–4pm, free otherwise.\" The manager reads it and writes the reply: \"Yes, it's free except 2–4pm.\"\n\nThree things to notice:\n\n- **The manager never does the errand.** They only write a request in the agreed format. The runner (your program) actually does it.\n- **The menu is the manager's only knowledge of what's possible.** A vague menu entry leads to vague or wrong slips. That's why tool descriptions matter.\n- **Each time the manager writes a slip, they read everything on their desk again.** Nothing else carries over. That leads straight into context and memory, which is next on your list.\n\nWhere the analogy breaks down: a real manager remembers yesterday, but a model only knows what's on the desk right now.\n\nQuick check: if the manager writes a slip asking for an errand that's not on the menu, who notices the problem, and what could the runner do about it?\n\nIf this still feels fuzzy, I can write a short lesson on it.",
+  "ttft_ms": 1340,
+  "type": "result",
+  "duration_ms": 18868,
+  "uuid": "33cdcee5-dcdb-4caa-af13-ccad8e19c110",
+  "ttft_stream_ms": 1029,
+  "time_to_request_ms": 33,
+  "first_content_frame_ms": 1029,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

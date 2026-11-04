@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 24000,
+  "stop_reason": "end_turn",
+  "session_id": "a68812e8-326f-488b-8a8d-49036ca2e73f",
+  "total_cost_usd": 0.1707252,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 28704,
+    "cache_read_input_tokens": 97766,
+    "output_tokens": 3634,
+    "output_tokens_details": {
+      "thinking_tokens": 126
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28704,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 560,
+        "cache_read_input_tokens": 36334,
+        "cache_creation_input_tokens": 2300,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2300
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3634,
+      "cacheReadInputTokens": 97766,
+      "cacheCreationInputTokens": 28704,
+      "webSearchRequests": 0,
+      "costUSD": 0.1707252,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 126,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded `submissions/s2.json` and wrote the grades to `grades/0001-s2.json`. Riley got 3 items correct, 2 partial and 1 wrong.\n\n| Item | Verdict | Feedback |\n|---|---|---|\n| q1 | correct | The loop is what makes a system an agent. |\n| q2 | correct | The model outputs only a request naming the tool and its arguments. |\n| q3 | wrong (M6) | Riley chose \"left to run longer, it will eventually fix the bug\". With the same failing test coming back every time, more steps add nothing. The fix is a step limit, which also protects the budget. |\n| q4 | partial (M4) | The answer of 4 is right, but the stated reason, \"the model can only run one tool itself\", is wrong. The program runs the tools, and the model only asks for them. |\n| q5 | correct | Riley covered both parts: the result goes back as the next input, and the model uses it to pick its next step. |\n| q6 | partial | Riley said the model picks a tool by its name. It actually chooses from the whole description: name, purpose and parameters. |\n\n**Summary for Riley:** You have the loop down, what the model outputs, and what happens to a tool's result. Three things are still open. The program runs the tools, not the model. A loop needs a stopping condition. Tool descriptions matter, not just names.\n\n**Next step:** Write a three-line description for `check_calendar`: what it does, what each parameter means, and when not to use it. Then ask me to review it.\n\nI also added `learning-records/0003-loop-needs-a-stop-and-program-runs-tools.md` and updated `NOTES.md`. `submissions/s1.json` is still ungraded.",
+  "ttft_ms": 1759,
+  "type": "result",
+  "duration_ms": 24104,
+  "uuid": "171183fb-a6f5-4d0f-916c-e24d46bb6986",
+  "ttft_stream_ms": 1030,
+  "time_to_request_ms": 32,
+  "first_content_frame_ms": 1030,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

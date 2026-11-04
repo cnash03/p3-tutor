@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which question best tells a workflow apart from an agent?",
+      "options": [
+        {"id": "a", "text": "Whether the system calls a language model more than once"},
+        {"id": "b", "text": "Whether code or the model chooses the next step"},
+        {"id": "c", "text": "Whether the system uses tools such as a calendar"},
+        {"id": "d", "text": "Whether the system keeps memory between user sessions"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In your makerspace assistant, the code always runs the same three steps: (1) the model labels the question as \"manual\" or \"booking\", (2) the code calls the manual search or the calendar tool to match that label, (3) the model writes the reply. How is this system best described?",
+      "options": [
+        {"id": "a", "text": "An agent, because a model is called at several points"},
+        {"id": "b", "text": "An agent, because it chooses between two different tools"},
+        {"id": "c", "text": "A workflow, because the model has no tools at all"},
+        {"id": "d", "text": "A workflow, because code fixes the order of the steps"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which part of the makerspace assistant is the best candidate for a fixed workflow rather than an agent?",
+      "options": [
+        {"id": "a", "text": "Every booking: check the slot is free, create it, send confirmation"},
+        {"id": "b", "text": "Answering any question a student might ask about any machine"},
+        {"id": "c", "text": "Working out why a student's 3D print keeps failing, step by step"},
+        {"id": "d", "text": "Planning a project that needs several machines over several days"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow for answering a manual question always makes 3 model calls. An agent doing the same job makes 7 model calls on average, because it loops until it decides it is done. Assume every call costs the same. Over 200 student requests, how many more model calls does the agent make than the workflow?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, what must be true about a task's steps for an agent to be worth using instead of a fixed workflow?"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says, \"Let's make the whole assistant an agent, since agents are more capable.\" In one or two sentences, give a reason from your budget and requirements to keep the predictable parts as fixed workflows."
+    }
+  ]
+}

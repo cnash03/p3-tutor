@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: where information lives in an agent</title>
+  <style>
+    body { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem; border-bottom: 1px solid #e4dfd4; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+  <h1>Where information lives in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">Lesson 1</a>. The model is stateless: the program supplies all state.</p>
+  <table>
+    <thead><tr><th>Where</th><th>Holds</th><th>Lasts</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Context</td><td>Rules, question, results in use</td><td>One run</td><td>Paid on every call</td></tr>
+      <tr><td>Notes</td><td>Small facts about a student or past actions</td><td>Across sessions</td><td>When loaded</td></tr>
+      <tr><td>Retrieval store</td><td>Manuals, policies</td><td>Until updated</td><td>Only sections fetched</td></tr>
+    </tbody>
+  </table>
+  <h2>Rules of thumb</h2>
+  <ul>
+    <li>Input tokens for a run = the sum of the full context at every call, not the text counted once.</li>
+    <li>A large tool result is re-sent on every later call: clear it once used.</li>
+    <li>More context is not better: cost rises and recall falls (context rot).</li>
+    <li>Save small durable facts, not raw tool output.</li>
+    <li>Memory tools are client-side: the model requests, the program writes.</li>
+  </ul>
+  <h2>Terms</h2>
+  <p><b>Context</b>: tokens sent in one request. <b>Context window</b>: the limit on them. <b>Compaction</b>: summarize and continue. <b>Retrieval</b>: fetch only relevant sections.</p>
+</body>
+</html>

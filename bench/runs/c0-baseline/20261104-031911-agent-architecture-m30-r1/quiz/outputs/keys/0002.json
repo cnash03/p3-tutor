@@ -1,0 +1,44 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "Anthropic's 'Building effective agents' defines workflows as systems where LLMs and tools are orchestrated through predefined code paths, and agents as systems where the LLM dynamically directs its own process and tool use. The difference is who owns the control flow. Option a is wrong because workflows can use tools, c confuses it with model size, and d reverses the definitions."
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The code fixes the steps and their order and the model never chooses them, so it is a workflow. Calling a model and running a tool (a) does not make a system an agent, and neither does the model writing text (b). The number of calls (d) is not the test."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "When the steps are known and the same each time, a fixed workflow gives predictability and avoids the extra model calls an agent spends deciding. Agentic systems trade latency and cost for flexibility, which this task does not need. Option a and b assume more freedom means better results; d overstates, since a workflow can still use the model for sub-steps."
+    },
+    {
+      "id": "q4",
+      "answer": 3000,
+      "tolerance": 0,
+      "rationale": "The difference per request is 5 - 2 = 3 calls, and 3 x 1,000 = 3,000. An answer of 2000 or 5000 reports the difference or total of the wrong quantity; 3 forgets to scale to 1,000 requests."
+    },
+    {
+      "id": "q5",
+      "answer": "An agent, because the steps cannot be predicted in advance, so the model has to choose which tools to use and when.",
+      "accepted": [
+        "Agent, since the needed steps are unknown ahead of time and the model must decide its own path.",
+        "An agent, because the path depends on what it finds and cannot be fixed in code beforehand."
+      ],
+      "rationale": "Full credit needs the choice (agent) and the reason (the steps are unpredictable, so the model must direct its own process). Agent without a reason is partial. Choosing a workflow shows the belief that fixed code is always better."
+    },
+    {
+      "id": "q6",
+      "answer": "Who decides the steps: if code fixes the order it is a workflow, and if the model decides what to do next and when to stop it is an agent.",
+      "accepted": [
+        "Who controls the flow of steps: code (workflow) or the model (agent).",
+        "Whether the model or the program decides which step comes next; using tools alone does not make it an agent."
+      ],
+      "rationale": "Full credit names who owns the control flow, code or model. Using tools or a model appears in both designs, so a response that answers with tools, model size or the number of calls is wrong. Saying only that agents are more complex is partial at best."
+    }
+  ]
+}

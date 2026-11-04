@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant is making its third model call for one student request. How does the model know what the first tool returned?",
+      "options": [
+        {"id": "a", "text": "The model keeps the first result in its own memory between calls"},
+        {"id": "b", "text": "The program puts the first result into the third call's input again"},
+        {"id": "c", "text": "The provider's server stores the result and the model looks it up"},
+        {"id": "d", "text": "The model works the result out again from what it learned in training"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent's first call has 2,100 input tokens (system prompt, tool definitions and the question). After each call, the program adds the model's tool request (40 tokens) and the tool's result (500 tokens) to the input of the next call. How many input tokens does the third model call have?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student passes vinyl cutter training today and returns to the assistant in a new session next week. Which design lets the assistant know about the training?",
+      "options": [
+        {"id": "a", "text": "Use a model with a very large window; it will remember the visit"},
+        {"id": "b", "text": "Keep the old chat in the window until the window is full"},
+        {"id": "c", "text": "Let the system prompt rewrite itself with each trained student"},
+        {"id": "d", "text": "Save the record outside the context and look it up in the new session"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your search_manuals tool returns a whole 30,000-token manual instead of a few relevant passages, and the request then needs five more model calls. In one sentence, give the main reason this is a problem."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your team lets the assistant save short notes about each student between sessions. Which fact should instead be looked up from the official records each time, rather than trusted from a saved note?",
+      "options": [
+        {"id": "a", "text": "Whether the student is currently trained on the laser cutter"},
+        {"id": "b", "text": "That the student likes booking the 3D printer in the morning"},
+        {"id": "c", "text": "That the student's current project is a small wooden box"},
+        {"id": "d", "text": "That the student prefers to be addressed by a nickname"}
+      ]
+    }
+  ]
+}

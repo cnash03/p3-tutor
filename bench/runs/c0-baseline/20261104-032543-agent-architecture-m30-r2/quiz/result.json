@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 42404,
+  "stop_reason": "end_turn",
+  "session_id": "b01f57b8-43f0-4d1c-8edf-0a58485b27cb",
+  "total_cost_usd": 0.195847,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 29456,
+    "cache_read_input_tokens": 96335,
+    "output_tokens": 5874,
+    "output_tokens_details": {
+      "thinking_tokens": 1863
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29456,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 520,
+        "cache_read_input_tokens": 34727,
+        "cache_creation_input_tokens": 4659,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4659
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 5874,
+      "cacheReadInputTokens": 96335,
+      "cacheCreationInputTokens": 29456,
+      "webSearchRequests": 0,
+      "costUSD": 0.195847,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1863,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 12,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I wrote the six-question quiz on O4 to `quizzes/0002.json` and its key to `keys/0002.json`.\n\n- **Content:** The quiz is built on the makerspace assistant. Four questions are multiple choice and two are one-sentence answers. They cover:\n  - telling workflows from agents by who owns the control flow;\n  - classifying a system that calls the model several times;\n  - picking which part of the assistant suits a fixed workflow;\n  - why a fixed workflow is cheaper and more predictable;\n  - when an agent earns its extra cost;\n  - the question to ask to decide which one a system is.\n- **Ahead of the lessons:** There is no lesson on O4 yet, so this quiz checks the objective itself. It follows Anthropic's distinction in \"Building effective agents\": in a workflow, predefined code paths direct the steps; in an agent, the model directs its own steps.\n- **Sources:** I wrote it from that distinction as I know it. I did not run a web search or add anything to `RESOURCES.md` in this pass.\n- **Misconception ids:** I used new ids M7–M10 in the key, because the workspace has no ids for these misconceptions yet. They are:\n  - M7: workflows don't use models.\n  - M8: using a model or tools, or making several calls, makes a system an agent.\n  - M9: agents are better or more flexible, so use one even for fixed tasks.\n  - M10: an agent saves you from writing control code.\n\nRiley, ask me anything about workflows and agents before you take it, and I can write a lesson on O4 if you want one.",
+  "ttft_ms": 1548,
+  "type": "result",
+  "duration_ms": 42490,
+  "uuid": "8b28e8d8-a0c1-470f-9dba-053a4ea5d374",
+  "ttft_stream_ms": 867,
+  "time_to_request_ms": 39,
+  "first_content_frame_ms": 867,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

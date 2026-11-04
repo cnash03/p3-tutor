@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "Each model call starts with nothing; the program builds the input from the earlier messages and tool results, so the first result is sent again. The model keeps no memory between calls (a, M8), the provider does not store and serve earlier steps in a normal call (c), and training data cannot contain the result of this student's calendar lookup (d).",
+      "distractors": {"a": "M8", "c": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": 3180,
+      "tolerance": 0,
+      "rationale": "Call 1 has 2,100. Call 2 adds 40 + 500 = 540, so 2,640. Call 3 adds another 540, so 3,180. Answering 2,640 stops one call early; 2,100 shows the idea that each call sends only new text (M8)."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "A new session starts with an empty context, so a lasting fact must be stored outside it and loaded or looked up again. A bigger window (a) is the size of one call, not storage (M7), and the old chat is not kept in the window across sessions (b, M3). A self-rewriting prompt (c) is not a store the program controls.",
+      "distractors": {"a": "M7", "b": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "The long result is sent again on every later call, so its cost is multiplied, and the longer context also makes the model worse at finding the relevant part.",
+      "accepted": [
+        "It is resent on each of the next calls, so it costs far more tokens.",
+        "It stays in the context and is paid for again at every later call.",
+        "It is sent with every later call, which multiplies the cost and can hurt accuracy."
+      ],
+      "rationale": "Full credit needs the key idea that the result stays in the history and is sent again on each later call, making it expensive (and, as a further reason, lowering recall). Saying only that it is too big for the window, or that it costs a lot once, is partial because it misses the repetition. Saying that the model remembers it for free shows M8."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Training status is a fact that must be exact and can change, so it should come from the official record through a tool. Soft preferences and project details (b, c, d) are low risk if slightly out of date, and are good uses for saved notes."
+    }
+  ]
+}

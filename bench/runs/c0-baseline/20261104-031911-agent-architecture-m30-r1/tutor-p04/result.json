@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 26797,
+  "stop_reason": "end_turn",
+  "session_id": "e631f32e-8ec7-41d0-b6af-ee1d3e65d683",
+  "total_cost_usd": 0.16601539999999998,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 24226,
+    "cache_read_input_tokens": 127122,
+    "output_tokens": 1956,
+    "output_tokens_details": {
+      "thinking_tokens": 320
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 24226,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 589,
+        "cache_read_input_tokens": 33753,
+        "cache_creation_input_tokens": 403,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 403
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1956,
+      "cacheReadInputTokens": 127122,
+      "cacheCreationInputTokens": 24226,
+      "webSearchRequests": 0,
+      "costUSD": 0.1419124,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 320,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 11593,
+      "outputTokens": 502,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.024103,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither, at least not yet. \"More agents always give better results\" isn't true, so the choice between five and ten is built on a false premise.\n\nIt's tempting because a team of specialists sounds better than one generalist. But every agent has a cost:\n\n- **Tokens.** Anthropic's engineers report that a single agent uses about 4× the tokens of a plain chat, and a multi-agent system about 15×. Your sponsor's budget is small, so this matters most for you.\n- **Handoffs.** Each agent only knows what it's told. Every handoff can drop detail or add confusion.\n- **Fit.** Multi-agent setups pay off for work that splits into independent, parallel pieces, like broad research, where the answer is worth the extra cost. Tightly connected work splits poorly.\n\nHere's a concrete case. A student asks, \"Can I use the laser cutter Thursday at 3?\" Looking up the manual, checking the calendar and booking are steps that depend on each other. One agent with three tools handles that cheaply. Ten agents would mostly pass the same facts to one another and bill you for each pass.\n\nFor your design review, I'd start with one agent and well-described tools. Make the fixed parts, like the booking steps, a plain workflow. Add a second agent only when you can name a specific failure that one agent can't fix, such as a context that overflows or a task that is truly parallel.\n\nSources: Anthropic's [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system). I only saw search-result summaries of it, not the full post.\n\nQuick check: for the Thursday-at-3 request, would the manual lookup and the calendar check work as parallel agents? Why or why not?\n\nI can turn this into a lesson on workflows versus agents and when to split, if you'd like one.",
+  "ttft_ms": 1847,
+  "type": "result",
+  "duration_ms": 26873,
+  "uuid": "d4450d1f-1546-409b-93dc-ccc1ae55f81d",
+  "ttft_stream_ms": 1668,
+  "time_to_request_ms": 33,
+  "first_content_frame_ms": 1668,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

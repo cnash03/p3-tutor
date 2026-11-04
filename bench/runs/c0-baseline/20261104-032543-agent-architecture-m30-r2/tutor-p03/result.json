@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 18456,
+  "stop_reason": "end_turn",
+  "session_id": "fe66bd1d-7f90-4b43-9acb-648889aeb303",
+  "total_cost_usd": 0.1151646,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 21803,
+    "cache_read_input_tokens": 62903,
+    "output_tokens": 1536,
+    "output_tokens_details": {
+      "thinking_tokens": 209
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 21803,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 453,
+        "cache_read_input_tokens": 31224,
+        "cache_creation_input_tokens": 509,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 509
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1536,
+      "cacheReadInputTokens": 62903,
+      "cacheCreationInputTokens": 21803,
+      "webSearchRequests": 0,
+      "costUSD": 0.1151646,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 209,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Not quite. A language model doesn't remember earlier conversations on its own, so your assistant won't remember what a student told it last week unless you build that in.\n\n**Why it feels like memory.** In a chat app, every time you send a message, the app sends the model the whole conversation so far, and the model reads it fresh. The model keeps nothing between calls. The app keeps the transcript and re-sends it each time.\n\n**Makerspace example.** On Monday, a student tells the assistant, \"I finished the laser cutter safety training.\" On the next Monday, a new session starts. The model sees only what your code puts in front of it. If your code doesn't include Monday's fact, the model has no way to know it. It will ask again, or worse, guess.\n\n**What this means for your design.** Remembering is your application's job:\n1. Save the fact somewhere outside the model, such as a file or a database row keyed by student.\n2. At the start of the next session, look it up.\n3. Put the relevant part into the text the model receives.\n\nThis also touches your budget. Everything you put in costs tokens on every call, so you'll want to save only what matters, such as training status, rather than whole transcripts.\n\nThis is the \"what to save between sessions\" part of your mission, and it's the topic coming up next in your notes. I can write a lesson on it if you'd like.\n\nQuick check: if you did nothing except keep the same model, what would the assistant know about a student at the start of a new session?",
+  "ttft_ms": 1494,
+  "type": "result",
+  "duration_ms": 18540,
+  "uuid": "0badc75c-3036-4ac3-8949-0cb084260790",
+  "ttft_stream_ms": 1139,
+  "time_to_request_ms": 39,
+  "first_content_frame_ms": 1140,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

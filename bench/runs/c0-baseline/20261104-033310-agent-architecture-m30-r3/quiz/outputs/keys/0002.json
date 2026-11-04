@@ -1,0 +1,52 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A workflow is orchestrated through predefined code paths; in an agent the model directs its own process. So the deciding question is who owns the control flow. Calling a model several times (a), using tools (c) and keeping memory (d) can all happen in either design. Picking a, c or d shows M7, that what separates them is a feature rather than who decides the next step.",
+      "distractors": {"a": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "d",
+      "rationale": "The code fixes the order of the steps and the model only fills in parts (a label, a reply), so this is a workflow (the routing pattern). Using a model at several points (a) or having two tools to pick from (b) does not make it an agent, because the code, not the model, decides what runs next. Option c is wrong on the facts: the code does call tools, and having tools is not what makes something a workflow.",
+      "distractors": {"a": "M7", "b": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Booking always follows the same known steps, so code can own the flow: it is predictable, cheaper and easier to test. The other three are open-ended, with a path that depends on what the model finds along the way, which is where an agent's flexibility earns its cost.",
+      "distractors": {"b": "M8", "c": "M8", "d": "M8"}
+    },
+    {
+      "id": "q4",
+      "answer": 800,
+      "tolerance": 0,
+      "rationale": "The agent makes 7 - 3 = 4 extra calls per request, and 4 x 200 = 800. An answer of 1400 (7 x 200) is the agent's total, not the difference; 600 is the workflow's total."
+    },
+    {
+      "id": "q5",
+      "answer": "The steps cannot be predicted in advance, so the model has to decide the path as it goes.",
+      "accepted": [
+        "The steps can't be known beforehand",
+        "The path depends on what the model finds along the way",
+        "The task is open-ended and the number or order of steps is unpredictable",
+        "The steps are not fixed in advance",
+        "The task needs flexibility and model-driven decisions"
+      ],
+      "rationale": "Agents suit tasks needing flexibility where the path cannot be predetermined; when the steps are known, a workflow is simpler and cheaper. Answering that the task is hard, or that it is important, does not address who needs to choose the steps and shows M8, that harder or bigger tasks automatically call for an agent."
+    },
+    {
+      "id": "q6",
+      "answer": "Agents trade extra cost and latency for flexibility, and our budget is small, so steps we already know should be fixed workflows, which are cheaper, faster and more predictable.",
+      "accepted": [
+        "An agent makes more model calls, which costs more of our small budget, so use a workflow when the steps are known",
+        "Workflows are cheaper and more predictable for known steps; agents add cost and latency that only pay off when the path is unpredictable",
+        "Fixed workflows use fewer model calls so they save budget"
+      ],
+      "rationale": "Full credit names a cost of agents (more model calls, so more money or latency, or less predictability) and links it to the small budget or to steps that are already known. Saying only that workflows are simpler is partial. Saying agents are always better, or that workflows are not allowed to use a model, is wrong and shows M8 or M7.",
+      "distractors": {}
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The loop is what makes it an agent: the model picks an action, the program runs it, and the result comes back. A longer prompt or a bigger context window only changes what a single call can do."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only outputs a structured request naming check_calendar and its arguments. The program runs the tool. Keep this in mind when you design the assistant, because it is the program that holds the booking system's credentials, not the model."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You picked 'left to run longer, it will eventually fix the bug'. That is tempting because people usually get there by persisting. But this agent gets the same failing test back every time, so more steps add nothing new and cost you tokens. The safeguard is a stopping condition such as a step limit (b) that ends the loop and reports back to a person. This matters for your budget: a loop without a limit can burn money."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your answer of 4 is right, and so is your count: three tool requests plus the final answer. The reason is off, though. The model does not run the tools, even one at a time. It only asks for them, and the program runs each one and sends the result back. That is why there are 4 calls: one for the question and one for each of the 3 results."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, both parts are there: the result goes back in as the next input, and the model uses it to decide its next step. Your group-chat comparison works. Next you will see that this growing history is exactly what fills the context window."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of it, but not enough. The model chooses from each tool's whole description: its name, what it does and the parameters it takes. A name like check_calendar can mislead. Is it the booking calendar or the machine's maintenance calendar? That is why writing clear tool descriptions is a core skill for your assistant."
+    }
+  ],
+  "summary": "You have the loop down: what makes an agent (q1), what the model outputs when it uses a tool (q2), and what happens to a tool's result (q5). Two things to work on. First, the program runs the tools, not the model, and your q4 reasoning still said otherwise. Second, a loop needs a stopping condition (q3), and the model picks tools from full descriptions, not just names (q6). Next step: take the check_calendar tool and write a three-line description (what it does, what each parameter means, when not to use it), then ask me to review it."
+}

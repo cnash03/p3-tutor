@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 16090,
+  "stop_reason": "end_turn",
+  "session_id": "407d4d82-5454-45b1-9b77-748e9f74d352",
+  "total_cost_usd": 0.1186834,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22096,
+    "cache_read_input_tokens": 61287,
+    "output_tokens": 1803,
+    "output_tokens_details": {
+      "thinking_tokens": 471
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22096,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 486,
+        "cache_read_input_tokens": 31204,
+        "cache_creation_input_tokens": 822,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 822
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1803,
+      "cacheReadInputTokens": 61287,
+      "cacheCreationInputTokens": 22096,
+      "webSearchRequests": 0,
+      "costUSD": 0.1186834,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 471,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture the model as a very smart manager working in a windowless office. They can't leave the room, see the outside world, or touch anything. The only link to the outside is a slot in the door.\n\nTaped beside the slot is a **menu of services**. Each entry says what the service does and what details it needs. For example: \"Check the booking calendar: give me a machine name and a date.\" Next to the door sits a **clerk**. That's your program.\n\nSay a student slides in a question: \"Is the laser cutter free Thursday?\"\n\n1. The manager can't know the answer from inside the room. They read the menu and write a slip: \"Check the booking calendar: laser cutter, Thursday.\"\n2. The manager stops and waits. They don't act. They only ask.\n3. The clerk reads the slip, does the real lookup, and slides the result back: \"Booked 2–4pm.\"\n4. The manager reads it and either writes another slip or writes the final answer to the student.\n\nSo \"tool calling\" means the model writes a structured request, and *your program* does the work. The model never runs anything itself.\n\nWhere the analogy bends: the manager has only the menu's wording to go on. If an entry is vague, they pick the wrong service or fill in the details badly. That's why writing good tool descriptions is one of your mission goals.\n\nDoes it help to think of the clerk as the part you build? Quick check: in the Thursday example, who actually looks at the calendar, the manager or the clerk?\n\nIf this clicks, I can build a short lesson on it, tied to your makerspace assistant.",
+  "ttft_ms": 1791,
+  "type": "result",
+  "duration_ms": 16151,
+  "uuid": "4ac20f32-0196-4358-9a42-879899370b5d",
+  "ttft_stream_ms": 1008,
+  "time_to_request_ms": 36,
+  "first_content_frame_ms": 1008,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

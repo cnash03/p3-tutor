@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 1.6rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.6rem; border-bottom: 1px solid #e4dfd4; }
+    th { font-family: system-ui, sans-serif; font-size: 0.78rem; text-transform: uppercase; color: #6b665e; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th { color: #a49e93; } td, th { border-color: #36332e; } a { color: #eaa77a; } }
+    @media print { body { background: #fff; color: #000; font-size: 11pt; } }
+  </style>
+</head>
+<body>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">Lesson 1</a>. Objective O3.</p>
+
+  <h2>Key terms</h2>
+  <table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td>Context</td><td>All the text sent to the model in one call: system prompt, tool definitions, messages, tool results.</td></tr>
+    <tr><td>Context window</td><td>The maximum size of one call, including the reply. It is not storage.</td></tr>
+    <tr><td>Context rot</td><td>Recall gets worse as the context gets longer.</td></tr>
+    <tr><td>Compaction</td><td>Summarize a long history and start a new window from the summary.</td></tr>
+    <tr><td>Short-term memory</td><td>The message history of one conversation.</td></tr>
+    <tr><td>Long-term memory</td><td>Facts saved outside the context that later sessions can load.</td></tr>
+    <tr><td>Retrieval</td><td>Fetching only the relevant chunk of a large source into the context when needed.</td></tr>
+  </table>
+
+  <h2>Rules of thumb</h2>
+  <ul>
+    <li>Each call is separate: the program resends the history, so a big tool result is paid for on every later call.</li>
+    <li>Input tokens for a request = the sum of every call's input, not just the last one.</li>
+    <li>A new session starts empty. Only what you saved outside the context can come back.</li>
+  </ul>
+
+  <h2>Where does it live?</h2>
+  <table>
+    <tr><th>Kind of information</th><th>Put it</th><th>Makerspace example</th></tr>
+    <tr><td>Short, always needed</td><td>System prompt</td><td>Booking rules, shutdown procedure</td></tr>
+    <tr><td>Exact and changing</td><td>Behind a tool</td><td>Calendar, training status</td></tr>
+    <tr><td>Large, rarely all relevant</td><td>Chunked, retrieved by search</td><td>Machine manuals</td></tr>
+    <tr><td>Personal, lasting, soft</td><td>Saved notes, loaded next session</td><td>Preferred slots, current project</td></tr>
+    <tr><td>This session only</td><td>Message history; clear or summarize when long</td><td>Today's chat</td></tr>
+  </table>
+
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a></li>
+    <li><a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">Context windows</a></li>
+    <li><a href="https://docs.langchain.com/oss/python/concepts/memory">Memory concepts</a></li>
+  </ul>
+</body>
+</html>

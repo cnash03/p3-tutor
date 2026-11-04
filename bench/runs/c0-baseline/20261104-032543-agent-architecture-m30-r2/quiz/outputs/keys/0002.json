@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow, predefined code decides the steps and their order; in an agent, the model decides what to do next. Both can call models and tools (a, b), and the number of model calls does not define either (d).",
+      "distractors": {"a": "M7", "b": "M8", "d": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The code fixes the sequence and the branches; the model only produces a label and a reply inside steps the code chose. Calling the model several times or using tools (a) does not make an agent, and a model's output selecting a branch that the code defined (c) is still the code's control flow. Models are used inside workflows all the time (d).",
+      "distractors": {"a": "M8", "c": "M8", "d": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "Booking confirmation has the same known steps every time, so code can fix them: cheaper, predictable and easy to test. The other three need the next step to depend on what was just found, or have steps unknown in advance, which is where an agent's flexibility pays off.",
+      "distractors": {"a": "M9", "b": "M9", "c": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": "The code fixes the steps, so the number of model calls is known and bounded, with no extra loop turns where the model decides what to do next.",
+      "accepted": [
+        "The number of model calls is fixed in advance, so cost and behaviour are predictable.",
+        "It makes only the calls its steps need, while an agent may loop more times and use more tokens.",
+        "The steps are set by code, so there are no extra model calls spent deciding what to do next."
+      ],
+      "rationale": "Full credit names the mechanism: fixed steps mean a known, bounded number of model calls, while an agent may loop for an unpredictable number of turns and each turn re-reads the growing context. Saying only that workflows are better or simpler, with no link to calls, steps or cost, is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "An agent pays off when the path cannot be written in advance because each result changes what comes next. If the task is identical each time (b, d) a fixed workflow is cheaper and more predictable, and avoiding code (c) is not a reason that justifies an agent's cost.",
+      "distractors": {"b": "M9", "c": "M10", "d": "M9"}
+    },
+    {
+      "id": "q6",
+      "answer": "Who decides the next step: fixed code written in advance, or the model at run time?",
+      "accepted": [
+        "Does the code or the model decide what happens next?",
+        "Who controls the order of steps, the program or the model?",
+        "Who owns the control flow?",
+        "Is the sequence of steps fixed in advance by code, or does the model choose it?"
+      ],
+      "rationale": "The test is who owns the control flow, not whether a model is called. A fixed sequence with a model call at step 2 is a workflow. An answer that asks only how many times the model is called, or whether tools are used, shows M8."
+    }
+  ]
+}

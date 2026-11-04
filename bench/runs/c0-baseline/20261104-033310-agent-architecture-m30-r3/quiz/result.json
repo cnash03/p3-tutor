@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 43667,
+  "stop_reason": "end_turn",
+  "session_id": "e768ae39-6197-42ee-903e-f1982289fcf1",
+  "total_cost_usd": 0.2102378,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 30641,
+    "cache_read_input_tokens": 134544,
+    "output_tokens": 5350,
+    "output_tokens_details": {
+      "thinking_tokens": 1278
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30641,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 369,
+        "cache_read_input_tokens": 36572,
+        "cache_creation_input_tokens": 3999,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3999
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 5350,
+      "cacheReadInputTokens": 134544,
+      "cacheCreationInputTokens": 30641,
+      "webSearchRequests": 0,
+      "costUSD": 0.2029968,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1278,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 5841,
+      "outputTokens": 280,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.007240999999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 14,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Quiz 0002 is ready, with its key. It has six items on O4:\n\n- **Files:** `quizzes/0002.json` and `keys/0002.json`.\n- **Types:** three multiple-choice items, one numeric item and two short-answer items.\n- **Content:** the items cover who owns the control flow, spotting a fixed workflow in your makerspace assistant, choosing which part of the assistant should be a workflow, comparing cost per request, and when an agent is worth it.\n- **Source:** the definitions come from Anthropic's \"Building effective agents\".\n- **Ahead of the lessons:** no lesson covers O4 yet, so this quiz checks the objective itself. I can write a lesson on it if you want one.\n- **New misconception ids:** I used M7 for treating a feature (several model calls, tools or memory) as what makes an agent. I used M8 for assuming harder tasks or agents are always better. Neither id existed before, and the key marks the options that encode them.\n\nI didn't edit `NOTES.md`, because the quiz hasn't been taken yet.\n\nDo you want to take the quiz now in the chat?",
+  "ttft_ms": 1874,
+  "type": "result",
+  "duration_ms": 44187,
+  "uuid": "23ddf9e2-8022-4aee-80cc-710f0698705f",
+  "ttft_stream_ms": 1020,
+  "time_to_request_ms": 34,
+  "first_content_frame_ms": 1020,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 208458,
+  "stop_reason": "end_turn",
+  "session_id": "ea3122ed-0b0d-4745-8e74-08567ac9f9a4",
+  "total_cost_usd": 0.706691,
+  "usage": {
+    "input_tokens": 22,
+    "cache_creation_input_tokens": 70733,
+    "cache_read_input_tokens": 452885,
+    "output_tokens": 25055,
+    "output_tokens_details": {
+      "thinking_tokens": 2748
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 70733,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 711,
+        "cache_read_input_tokens": 75402,
+        "cache_creation_input_tokens": 5261,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 5261
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 22,
+      "outputTokens": 25055,
+      "cacheReadInputTokens": 452885,
+      "cacheCreationInputTokens": 70733,
+      "webSearchRequests": 0,
+      "costUSD": 0.624103,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2748,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 41668,
+      "outputTokens": 2184,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.08258800000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 26,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The 30-minute lesson on O3 is written, along with a quiz, its key and a cheat sheet. I haven't opened the lesson in a browser or counted its words. I wrote it to the 30-minute budget.\n\n**Lesson:** `lessons/0001-context-and-memory-in-an-agent.html`\n\nBy the end, you can say what the makerspace assistant's model sees at each step, what is carried between steps and between sessions, and where manuals and student notes should live. It runs in this order:\n- **Warm-up:** a recall question on the agent loop.\n- **The context window:** what the model sees in one call.\n- **Between steps:** the program resends the whole history on every call. A worked token example shows why a long tool result is paid for again on each later call, which answers your earlier question about why the context window affects cost. The token counts are made up for the lesson.\n- **When the window fills or rots:** trimming results, clearing old ones and compaction.\n- **Between sessions:** nothing is kept unless you save it outside the context. Notes are covered as semantic, episodic and procedural memory.\n- **Retrieval:** getting the right page out of a long manual.\n- **Worked example and practice:** deciding whether each item goes in the system prompt, behind a tool, behind retrieval, or in a saved note.\n\nIt uses your preferred style: a concrete example first, then the general idea, with each term defined where it first appears. Every section ends with a practice check that gives feedback at once.\n\nThe sources are Anthropic's context-engineering article, the Claude context-windows docs and LangChain's memory concepts page. I added them to `RESOURCES.md`.\n\n**Also written:**\n- `quizzes/0002.json` and `keys/0002.json`: a five-item quiz on O3. It is ready when you are.\n- `cheatsheets/context-and-memory.html`: the key terms and a \"where does it live?\" table.\n- `NOTES.md`: the new files and the misconception ids M7 and M8, which I added for the key.\n\nQuizzes 0001 (submissions s1 and s2) still need grading.\n\nAsk me anything in the chat about the lesson. Do you want the 30-minute length again next time, or shorter?",
+  "ttft_ms": 901,
+  "type": "result",
+  "duration_ms": 192165,
+  "uuid": "b685fcf2-5ad6-44ea-9550-95e3fa88c1d8",
+  "ttft_stream_ms": 880,
+  "time_to_request_ms": 36,
+  "first_content_frame_ms": 880,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

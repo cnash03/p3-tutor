@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The context window is the text sent in one request; the model keeps nothing between requests or sessions, so anything that must survive a visit has to be saved by the program and loaded back. A larger window does not change that.",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 10800,
+      "tolerance": 0,
+      "rationale": "Each call re-sends everything so far. Call 1: 2,000 + 100 = 2,100. Call 2: 2,100 + 50 + 300 = 2,450. Call 3: 2,450 + 50 + 500 = 3,000. Call 4: 3,000 + 50 + 200 = 3,250. Sum: 2,100 + 2,450 + 3,000 + 3,250 = 10,800. An answer of 3,250 counts only the last call's input, and 5,400 or similar counts each piece once, which shows M7: thinking earlier content is not re-sent."
+    },
+    {
+      "id": "q3",
+      "answer": "Your program writes the file; the model only requests the write (a tool call) and the program carries it out.",
+      "accepted": [
+        "The application writes it; the model asks for the write through a tool call.",
+        "The program does, not the model; the model just requests the file operation."
+      ],
+      "rationale": "The memory tool is client-side: the model outputs a request such as create or str_replace on a path, and the program runs it against storage the team controls. Saying that the model writes the file itself, or that the provider stores it, is wrong (M4)."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "Retrieval puts only the relevant sections into context, so cost stays low and the answer comes from the real manual. Loading everything (a) pays for 400 pages on every call and adds context rot (M8). The model's training does not include this makerspace's manual (b), and asking the student to paste pages (c) does not solve the assistant's job.",
+      "distractors": {"a": "M8", "b": "M9"}
+    },
+    {
+      "id": "q5",
+      "answer": "c",
+      "rationale": "Notes should hold small, durable facts about the student that are costly to rediscover and that will matter next time. The retrieved page (a), raw calendar data (b) and the model's working messages (d) are large or short-lived, and re-loading them each visit adds cost without value.",
+      "distractors": {"a": "M8", "b": "M8", "d": "M8"}
+    }
+  ]
+}

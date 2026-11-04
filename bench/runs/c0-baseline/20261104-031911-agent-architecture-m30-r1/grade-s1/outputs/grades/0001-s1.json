@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. What makes a system an agent is the loop: the model picks an action, the program runs it, and the result comes back. A longer prompt or a bigger model only changes what one call can do."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "You picked 'the calendar entries, read by opening the booking system on its own'. The model can't do that, and it's a tempting belief because the whole exchange looks like the assistant checking the calendar. The model only writes text: here, a request naming check_calendar with 'laser cutter' and tomorrow's date as arguments (option c). The program around the model runs the tool and sends the entries back."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The agent is repeating itself with the same failure, so more steps or more context won't help. A step limit stops the loop and hands the problem back to a person. For your assistant, this is also a cost cap."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "The answer is 4, not 1. Your reasoning says the model 'runs the 3 tools itself', and that is the wrong belief (M4). The program runs the tools. Each model call ends with one tool request or the final answer, so the three requests take three calls and the final answer takes a fourth. Another way to count: the model is called once for each input it gets, which is the question plus the three tool results."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You have the 'what' right: the result goes back to the model. The question also asked why. The program does this so the model can use the result to decide its next step or write the final answer. The model can't see the tool's result any other way. Add the reason whenever you're asked about a design choice, because that is what you'll need at a design review."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "The first half is correct: the model gets a list of tools, each with a name and a description, and picks the one that fits. The second half is wrong. The model does not remember anything on its own between sessions. Each session starts with only the text it is given, so any memory of earlier choices would have to be saved by your program and put back into the input. How to build that is the next topic."
+    }
+  ],
+  "summary": "You have the shape of the agent loop (q1), you know when to stop it (q3), and you know the model chooses tools from their descriptions (q6). The idea to fix is who does what: the model only writes text, including its tool requests, and the program runs the tools (q2, q4). Redraw your laser cutter example as two columns, 'model writes' and 'program does', and mark which column each step falls in. Then count the model calls. Also keep in mind that the model remembers nothing between sessions unless your program supplies it, which leads into context and memory."
+}

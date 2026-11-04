@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A teammate proposes: \"Let's pick the model with the largest context window, and then the assistant will remember every student between visits.\" What is wrong with this plan?",
+      "options": [
+        {"id": "a", "text": "Larger windows are slower, but they do keep earlier visits automatically"},
+        {"id": "b", "text": "A window holds only what is sent in one request, so visits must be saved"},
+        {"id": "c", "text": "Nothing is wrong, since a window that large keeps all past chats"},
+        {"id": "d", "text": "The provider stores each user's chats, but only for one day at most"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In an agent run, the system prompt and tool descriptions take 2,000 tokens and the student's question takes 100. The model makes three tool requests of 50 tokens each, and the tool results are 300, 500 and 200 tokens. The program sends the whole message list on every call, and the model's final answer is the fourth call. Counting only input tokens, how many are sent across all four calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your assistant uses a memory tool that saves a student's training status to a file. In one or two sentences, who actually writes that file, and what does the model do?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks how to replace the focus lens on the laser cutter, whose manual runs to 400 pages. Which design keeps cost low and answers from the manual itself?",
+      "options": [
+        {"id": "a", "text": "Put all 400 pages in the context so nothing can be missed"},
+        {"id": "b", "text": "Rely on what the model learned about laser cutters in training"},
+        {"id": "c", "text": "Ask the student to paste the relevant pages into the chat"},
+        {"id": "d", "text": "Search the manual and put only the best-matching sections in"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Which item is the best one to save as a note that the assistant reads at the start of the student's next visit?",
+      "options": [
+        {"id": "a", "text": "The full text of the manual page it retrieved this time"},
+        {"id": "b", "text": "The raw calendar listing for the whole week of bookings"},
+        {"id": "c", "text": "The student's completed training and the date it finished"},
+        {"id": "d", "text": "Every message the model sent while it worked on the task"}
+      ]
+    }
+  ]
+}

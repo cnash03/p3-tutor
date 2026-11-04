@@ -1,0 +1,42 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "The model keeps nothing between calls; earlier messages are visible only if the program re-sends them in the new context. Option b, c or d shows the belief that the model or its window holds memory itself.",
+      "distractors": {"b": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 7400,
+      "tolerance": 0,
+      "rationale": "Fixed plus question is 1,100. Call 1 = 1,100; call 2 = 1,600; call 3 = 2,100; call 4 = 2,600. The total is 7,400. An answer of 2,600 counts only the last call; 4,400 counts the history as sent once per result rather than re-sent each call."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "A new session starts with an empty context, so a fact survives only if it was written to storage outside the context and read back in. A larger window enlarges one session only.",
+      "distractors": {"a": "M3", "b": "M4", "d": "M4"}
+    },
+    {
+      "id": "q4",
+      "answer": "It costs tokens on every call, and the model finds the one relevant page less reliably among so much text.",
+      "accepted": [
+        "It is expensive because all the tokens are re-sent on every call",
+        "Cost: all manuals are paid for on every call",
+        "Too many tokens per call, which raises cost",
+        "Long contexts make the model worse at finding the relevant page",
+        "Context rot: accuracy drops as the context grows",
+        "The relevant page gets lost among the irrelevant text"
+      ],
+      "rationale": "Two valid reasons: every token in the context is paid for on every call, and accuracy tends to fall as the context grows (context rot, lost in the middle). Fitting in the window does not mean the model uses it all well. An answer that says it would not fit, or that the model would then know the manuals permanently, shows M4 or M5."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Retrieval through a search tool puts only the few relevant passages into the context, so the answer comes from the right page and the cost stays small. One-line summaries lack the tension value; a notes file is for facts to carry across sessions, not for storing manuals; loading each manual in full is the costly approach.",
+      "distractors": {"b": "M5", "c": "M5", "d": "M4"}
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 56212,
+  "stop_reason": "end_turn",
+  "session_id": "2138bf8c-d9db-433b-bab2-7711c5a17078",
+  "total_cost_usd": 0.1773584,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 29410,
+    "cache_read_input_tokens": 97012,
+    "output_tokens": 4030,
+    "output_tokens_details": {
+      "thinking_tokens": 161
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29410,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 557,
+        "cache_read_input_tokens": 36827,
+        "cache_creation_input_tokens": 2513,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2513
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 4030,
+      "cacheReadInputTokens": 97012,
+      "cacheCreationInputTokens": 29410,
+      "webSearchRequests": 0,
+      "costUSD": 0.1773584,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 161,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 16,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded submission s2 for quiz 0001 and wrote the grades to `grades/0001-s2.json`. You got 3 correct, 2 partial and 1 wrong.\n\n| Item | Verdict | Feedback |\n|---|---|---|\n| q1 | Correct | The loop of choosing an action, running it and feeding the result back is what makes a system an agent. |\n| q2 | Correct | The model only writes a request naming the tool and its arguments. Your program runs the tool. |\n| q3 | Wrong (M6) | This agent would repeat the same failing step forever. A step limit is the safeguard, and it also saves model calls on your budget. |\n| q4 | Partial (M4) | Your count of 4 is right, but the model doesn't run the tools. It writes a request, your program runs the tool, and the result goes into the next call. |\n| q5 | Correct | Both parts are there: the result goes back in as the next input, and the model uses it to decide its next step. |\n| q6 | Partial | The name is part of it, but the model chooses from the full description: name, purpose and parameters. |\n\n**Summary:** You have the loop itself down. Two things to fix:\n- An agent needs a stopping condition, such as a step limit.\n- The program runs the tools, and the model picks them from their full descriptions, not just their names.\n\nI also added learning record `0003` and updated `NOTES.md`. s1 is still ungraded.\n\n**Next step:** Write a description for `check_calendar` in your own words: what it does, its parameters and when to use it. Then point out which part would make the model call it for \"Is the laser cutter free tomorrow?\"\n\nDo you want me to grade s1 too, so we can compare your two attempts?",
+  "ttft_ms": 12090,
+  "type": "result",
+  "duration_ms": 56322,
+  "uuid": "00db34df-0f74-4eca-810c-1daae48c4856",
+  "ttft_stream_ms": 11404,
+  "time_to_request_ms": 43,
+  "first_content_frame_ms": 11405,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

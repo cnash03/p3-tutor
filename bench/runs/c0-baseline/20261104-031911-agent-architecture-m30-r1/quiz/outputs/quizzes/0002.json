@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "What is the difference between a workflow and an agent, as the terms are used for systems built around a language model?",
+      "options": [
+        {"id": "a", "text": "A workflow never calls tools, while an agent is a system that does call tools"},
+        {"id": "b", "text": "In a workflow, code fixes the order of steps; in an agent, the model chooses them"},
+        {"id": "c", "text": "A workflow uses a small model, while an agent always needs the largest model"},
+        {"id": "d", "text": "In a workflow, the model chooses the steps; in an agent, code fixes the order"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A Python function takes a booking request, always calls the model once to pull out the machine and time, then runs check_calendar in code, then calls the model once more to write a reply. The model never decides whether or when to call a tool. What is this system?",
+      "options": [
+        {"id": "a", "text": "An agent, because it calls a language model and also runs a tool"},
+        {"id": "b", "text": "An agent, because the model writes the final reply to the student"},
+        {"id": "c", "text": "A workflow, because the code decides the steps and their order"},
+        {"id": "d", "text": "A workflow, because it makes fewer than five calls to the model"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your makerspace assistant must book a machine. Every booking needs the same steps in the same order: check the calendar, check the student's training record, then write the booking. Which design is the better choice for this part, and why?",
+      "options": [
+        {"id": "a", "text": "An agent, because the model may find a cleverer order of the steps"},
+        {"id": "b", "text": "An agent, because a loop is always more accurate than fixed code"},
+        {"id": "c", "text": "A workflow, because the steps are known, so fixed code is cheaper and more predictable"},
+        {"id": "d", "text": "A workflow, because a model cannot be trusted to call any tool at all"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Your sponsor's budget is counted in model calls. For a booking request, a fixed workflow always makes 2 model calls. An agent handling the same request averages 5 model calls, because it decides step by step and each step is one call. For 1,000 booking requests, how many more model calls does the agent make than the workflow?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Students sometimes ask open questions such as \"my 3D print keeps warping, what should I try?\" The assistant cannot know in advance which manuals or checks it will need. In one sentence, should this part be a fixed workflow or an agent, and why?"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says, \"Any system that uses a language model and tools is an agent.\" In one or two sentences, correct them: what question decides whether it is a workflow or an agent?"
+    }
+  ]
+}

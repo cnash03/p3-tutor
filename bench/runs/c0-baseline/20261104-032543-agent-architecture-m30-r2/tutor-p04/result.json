@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 21266,
+  "stop_reason": "end_turn",
+  "session_id": "7f1fbd45-752c-482a-bcc7-d412637dede0",
+  "total_cost_usd": 0.16287819999999997,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 23624,
+    "cache_read_input_tokens": 126436,
+    "output_tokens": 1957,
+    "output_tokens_details": {
+      "thinking_tokens": 274
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23624,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 631,
+        "cache_read_input_tokens": 33134,
+        "cache_creation_input_tokens": 420,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 420
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 1957,
+      "cacheReadInputTokens": 126436,
+      "cacheCreationInputTokens": 23624,
+      "webSearchRequests": 0,
+      "costUSD": 0.1393772,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 274,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 11401,
+      "outputTokens": 420,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.023501,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither. \"More agents always give better results\" isn't true, and it matters for your budget.\n\nAnthropic measured this in their own multi-agent research system. A single agent uses about 4× the tokens of a plain chat, and a multi-agent system uses about 15×. Their multi-agent setup beat a single agent by 90% on research tasks. But the gain came from *breadth-first* work: many independent searches that can run in parallel. ([Anthropic: how we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system))\n\nYour assistant's requests look different:\n\n- \"How do I change the blade on the bandsaw?\" is one lookup in one manual.\n- \"Is the laser cutter free Thursday?\" is one calendar check.\n- \"Book me the 3D printer\" is a short sequence where each step depends on the one before.\n\nEach extra agent adds a handoff. Context gets copied or summarized between agents, and the model calls multiply. That costs money, and information gets lost at each handoff. On a small model budget, that's a real risk.\n\nA sensible starting point for your design review is **one agent with three tools** (manual search, calendar check, booking). Keep the booking confirmation as a fixed workflow step, not something the agent decides. Split off a second agent only if you can show a concrete problem, such as the manuals flooding the context, or a task that really can run in parallel. Then measure whether the split helped.\n\nQuick check: for \"Is the bandsaw free Friday, and what blade does it take?\", could the two parts run in parallel? Would that justify two agents, or is one agent making two tool calls enough? Tell me your reasoning.\n\nI can also teach a full lesson on workflows versus agents and when multi-agent pays off. That's the last item in your mission's success list.\n\nSources:\n- [Anthropic Engineering: multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)",
+  "ttft_ms": 1523,
+  "type": "result",
+  "duration_ms": 21347,
+  "uuid": "8d4fe6ff-8fc6-45cf-a69c-8e883d5ba97a",
+  "ttft_stream_ms": 997,
+  "time_to_request_ms": 34,
+  "first_content_frame_ms": 997,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

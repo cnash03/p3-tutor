@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 21112,
+  "stop_reason": "end_turn",
+  "session_id": "07836219-c588-4d54-bda7-f549f681c243",
+  "total_cost_usd": 0.13400879999999998,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 22855,
+    "cache_read_input_tokens": 94664,
+    "output_tokens": 2364,
+    "output_tokens_details": {
+      "thinking_tokens": 886
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22855,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 516,
+        "cache_read_input_tokens": 31846,
+        "cache_creation_input_tokens": 939,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 939
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2364,
+      "cacheReadInputTokens": 94664,
+      "cacheCreationInputTokens": 22855,
+      "webSearchRequests": 0,
+      "costUSD": 0.13400879999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 886,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here's a different way in: think of the model as a person working in a sealed office.\n\nThey can't leave the room, use a phone or open a browser. They can only do two things: read the papers that come through a slot in the door, and write notes and slide them back out.\n\nOn the wall hangs a **menu of services**. Each entry has a name and a short description: \"Calendar check: give me an equipment name and a day, and I'll tell you the open slots.\" This menu is what we call the *tools*.\n\nA student's question arrives on paper: \"Is the laser cutter free Friday?\" The person in the office can't know that, so they write a note: \"Please run *Calendar check*: laser cutter, Friday.\" That note is the **tool call**. Nothing has happened yet. It's only a request.\n\nOutside the door, an assistant (your Python program) reads the note, looks at the real calendar, and slides the result back in: \"Open 2–4 pm.\" The person reads it and writes the final answer: \"Yes, 2–4 pm.\" If they needed more, they'd write another note first.\n\nThe key point is that **the model never does anything itself. It only writes requests, and your program carries them out.** The model's choice of tool is only as good as the menu descriptions, which is why writing those clearly is one of your mission goals.\n\nWhere the analogy breaks: a real person remembers earlier notes. The model doesn't. Each time, your program slides in the whole pile of papers again (question, notes, results). Longer piles cost more, which matters for your budget.\n\nQuick check: in your makerspace assistant, who actually looks at the booking calendar, the model or your program? Tell me in your own words.",
+  "ttft_ms": 2251,
+  "type": "result",
+  "duration_ms": 21208,
+  "uuid": "d03cd1d5-1297-4c44-99c1-8e2c93640a97",
+  "ttft_stream_ms": 1924,
+  "time_to_request_ms": 38,
+  "first_content_frame_ms": 1924,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 26329,
+  "stop_reason": "end_turn",
+  "session_id": "c56cea0d-1c97-40fd-8221-e43c3853eebb",
+  "total_cost_usd": 0.1763074,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 29218,
+    "cache_read_input_tokens": 98397,
+    "output_tokens": 3974,
+    "output_tokens_details": {
+      "thinking_tokens": 180
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29218,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 576,
+        "cache_read_input_tokens": 36722,
+        "cache_creation_input_tokens": 2426,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2426
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3974,
+      "cacheReadInputTokens": 98397,
+      "cacheCreationInputTokens": 29218,
+      "webSearchRequests": 0,
+      "costUSD": 0.1763074,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 180,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 16,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded Riley's submission s1 for quiz 0001 and wrote the grades to `grades/0001-s1.json`. Riley got 2 of 6 right, 2 partly right and 2 wrong.\n\n| Item | Verdict | Why |\n|---|---|---|\n| q1 | correct | The loop is what makes a system an agent. |\n| q2 | wrong (M4) | Riley said the model opens the booking system itself. The model only writes a tool request, and the program runs the tool. |\n| q3 | correct | A step limit is the right safeguard against a repeating loop. |\n| q4 | wrong (M4) | Riley answered 1 and said the model \"runs the 3 tools itself\". The answer is 4: three tool requests plus the final answer. |\n| q5 | partial | Riley said the result goes back to the model but not why. The reason is that the model needs it to choose its next step or write the answer. |\n| q6 | partial (M3) | Riley was right that the model picks a tool from its name and description. Riley was wrong that it remembers earlier choices on its own across sessions. |\n\n**Summary:** Riley understands the loop's shape, when to stop it, and that the model picks tools from their descriptions. The gap is who does what: the model only writes text, and the program runs the tools and carries any memory between sessions.\n\nI also added `learning-records/0003-who-runs-the-tools.md` for the two open misconceptions (M3 and M4) and updated `NOTES.md`. `submissions/s2.json` is still ungraded.\n\n**Next step:** Riley should redraw the laser-cutter example as two columns, \"model writes\" and \"program does\", then count the model calls again. After that, move on to context and memory, which builds on the point that the model sees only what the program gives it.",
+  "ttft_ms": 1643,
+  "type": "result",
+  "duration_ms": 26454,
+  "uuid": "2653c198-c89e-4845-8cea-20411f4bf80c",
+  "ttft_stream_ms": 929,
+  "time_to_request_ms": 39,
+  "first_content_frame_ms": 929,
+  "queued_turn_count": 0,
+  "result_index": 0
+}
