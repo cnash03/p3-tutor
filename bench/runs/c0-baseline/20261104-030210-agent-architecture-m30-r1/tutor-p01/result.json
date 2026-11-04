@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 11099,
+  "stop_reason": "end_turn",
+  "session_id": "7319c93f-735b-4265-b31c-430abf6ed838",
+  "total_cost_usd": 0.1102146,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 22792,
+    "cache_read_input_tokens": 30143,
+    "output_tokens": 1301,
+    "output_tokens_details": {
+      "thinking_tokens": 150
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22792,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 547,
+        "cache_read_input_tokens": 20213,
+        "cache_creation_input_tokens": 12509,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 12509
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1301,
+      "cacheReadInputTokens": 30143,
+      "cacheCreationInputTokens": 22792,
+      "webSearchRequests": 0,
+      "costUSD": 0.1102146,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 150,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't give you the letter for q3. Quiz 0001 hasn't been graded yet, and a retake only tells you something if the answer comes from you. Handing over a letter would defeat the point of practicing. Once you've submitted and I've graded it, we can go through q3 in full, including why each wrong option is tempting.\n\nHere is a way to work on it that applies to all four options equally:\n\n1. **Pin down what's broken.** Read the stem and say in one sentence what is going wrong. Is it a lack of information, a lack of ability, or something else?\n2. **Check each option against that sentence.** For each one, ask: \"If I made this change, would the agent behave differently on step 41?\" The stem says all 40 steps are still in context, and that detail is there for a reason.\n3. **Look at where the change lives.** The stem asks for a change to the *agent program*, meaning the code around the model. Ask of each option whether it changes that program or only what the model sees or is told.\n\nThis connects to your assistant. A booking agent that gets stuck retrying costs money on every call. So \"what stops a loop that isn't making progress?\" is a design-review question you'll face, not just a quiz item.\n\nTell me which option you lean toward and your reasoning in one or two sentences. I won't confirm or rule it out, but I can help you check whether the reasoning holds together. Or submit all six answers and I'll grade them right away.",
+  "ttft_ms": 1638,
+  "type": "result",
+  "duration_ms": 11170,
+  "uuid": "ced56c0e-4840-4ca9-8a26-6def9ed30410",
+  "ttft_stream_ms": 1209,
+  "time_to_request_ms": 36,
+  "first_content_frame_ms": 1209,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

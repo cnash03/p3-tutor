@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run makes 6 model calls in total. A 3,000-token tool result is added to the context right after call 2 and is never removed. The program re-sends the whole context on every call. In how many of the 6 calls is that tool result part of the model's input?",
+      "unit": "calls"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday your assistant told a student that the lathe needs a safety briefing. On Friday, in a new chat, the student says \"as you told me Monday\" and the assistant has no idea what they mean. Which explanation is correct?",
+      "options": [
+        {"id": "a", "text": "The model's memory of Monday faded because several days had passed"},
+        {"id": "b", "text": "The new chat began with an empty context and Monday was never saved"},
+        {"id": "c", "text": "The context window was too small to keep a whole chat from Monday"},
+        {"id": "d", "text": "The model had not yet learned from Monday's chat when Friday began"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks what fault code \"E-47\" means on the vinyl cutter. The manual has a line reading \"E-47: blade carriage jammed.\" Which search is the most dependable way to find that line?",
+      "options": [
+        {"id": "a", "text": "Embedding search alone, because it understands what the question means"},
+        {"id": "b", "text": "Asking the model to answer from memory without searching the manual"},
+        {"id": "c", "text": "Keyword search, because the exact code string is the useful signal"},
+        {"id": "d", "text": "Loading the longest chunk, because it holds the most information"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your makerspace has about 2,000 pages of manuals. In one or two sentences, why is it better for the assistant to retrieve a few relevant pages for each question than to put all the manuals in every request?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long agent run is close to the context window's limit. Name one thing the program can do to let the run continue without losing the important points."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 37936,
+  "stop_reason": "end_turn",
+  "session_id": "2960e4f7-5c0d-4244-9f7d-f8aaa6896bdf",
+  "total_cost_usd": 0.1988474,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 29517,
+    "cache_read_input_tokens": 136147,
+    "output_tokens": 5353,
+    "output_tokens_details": {
+      "thinking_tokens": 1376
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29517,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 343,
+        "cache_read_input_tokens": 39068,
+        "cache_creation_input_tokens": 379,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 379
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 5353,
+      "cacheReadInputTokens": 136147,
+      "cacheCreationInputTokens": 29517,
+      "webSearchRequests": 0,
+      "costUSD": 0.1988474,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1376,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The six-question quiz on O4 is ready: `quizzes/0002.json`, with its key in `keys/0002.json`. I answered each item from its stem alone and each has one defensible answer.\n\n- **Ahead of the lessons:** there is no lesson on O4 yet. The quiz checks the objective itself, using the makerspace assistant as the setting.\n- **Mix of items:** four multiple-choice and short items cover who owns the control flow and when a fixed workflow is the better choice. One numeric item compares cost, and one multiple-choice item asks which request justifies an agent.\n- **New misconception ids:** the key uses M7 to M9, which I took as free ids because no earlier key or note defines them.\n  - M7: using tools makes a system an agent.\n  - M8: an agent is always more flexible or reliable.\n  - M9: a workflow never calls a model.\n- **Not done:** I did not update `NOTES.md` or write a learning record, since there are no answers to grade yet.\n\nWant a lesson on this objective before taking the quiz?",
+  "ttft_ms": 1566,
+  "type": "result",
+  "duration_ms": 38025,
+  "uuid": "73220bcc-10c1-452a-997d-d360c4081514",
+  "ttft_stream_ms": 811,
+  "time_to_request_ms": 36,
+  "first_content_frame_ms": 811,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

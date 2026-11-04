@@ -1,0 +1,112 @@
+{
+  "duration_api_ms": 195920,
+  "stop_reason": "end_turn",
+  "session_id": "f8c5f523-94dc-48a8-bdaf-b7072672bae8",
+  "total_cost_usd": 0.6481388,
+  "usage": {
+    "input_tokens": 20,
+    "cache_creation_input_tokens": 63672,
+    "cache_read_input_tokens": 379829,
+    "output_tokens": 23546,
+    "output_tokens_details": {
+      "thinking_tokens": 3098
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 63672,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 883,
+        "cache_read_input_tokens": 69310,
+        "cache_creation_input_tokens": 4292,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4292
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 23546,
+      "cacheReadInputTokens": 379829,
+      "cacheCreationInputTokens": 63672,
+      "webSearchRequests": 0,
+      "costUSD": 0.5661538,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3098,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 41410,
+      "outputTokens": 2115,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.081985,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 25,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "The 30-minute lesson on O3 is written, with a short quiz and answer key. I didn't render the lesson or run any checks on it. I estimate it at about 3,800 words, inside the 2,700–6,750 range that counts as fitting 30 minutes.\n\n**Lesson:** `lessons/0001-context-and-memory-in-an-agent.html`\n\nIt uses the makerspace assistant throughout, in five parts:\n- **Context window:** what the model reads in one call (system prompt, tool descriptions, history, tool results), why it costs tokens, and why a fuller window isn't a better one.\n- **Between steps:** the model keeps nothing between calls, and the program re-sends the whole history each time. A worked token count shows one answer costing about 12,600 input tokens, three times the final context. The sizes are illustrative, made-up numbers.\n- **Between sessions:** nothing survives unless the program saves it outside the window and loads it back. This covers notes, a sample student record in JSON, and loading it up front versus letting the model fetch it with a tool.\n- **Retrieval:** chunks, embeddings versus keyword search, and Anthropic's rule of thumb that a knowledge base under about 200,000 tokens can go straight into the prompt.\n- **Practice:** a worked example of where each fact should live, a second one on the cost of a 40,000-token tool result, and a practice task for Riley.\n\nThe lesson also has two figures, four practice checks with instant feedback, and three \"common mix-up\" boxes. The primary source is Anthropic's [Effective context engineering for AI agents](https://anthropic.com/engineering/effective-context-engineering-for-ai-agents), with [Contextual Retrieval](https://anthropic.com/news/contextual-retrieval) as a second source. Both were fetched this session.\n\n**Quiz and key:** `quizzes/0002.json` and `keys/0002.json` have five fresh items (numeric, multiple choice and short answer). I introduced misconception ids M7 (the model learns from each chat), M8 (a bigger window is memory across sessions) and M9 (embeddings always beat keywords). I reused M3 (memory is automatic).\n\nI also created `RESOURCES.md` and updated `NOTES.md`. I did not write a learning record, because Riley hasn't shown any understanding of this material yet. Quiz 0001's two submissions are still ungraded.\n\nQuiz 0002 is ready whenever you want it, and you can ask me anything about the lesson.\n\nOne question for you: do the manuals fit under about 200,000 tokens? If they do, putting them straight in the prompt may beat building retrieval, and I can cover that choice next.",
+  "ttft_ms": 2191,
+  "type": "result",
+  "duration_ms": 179795,
+  "uuid": "0d2b12f7-20f0-4e01-a2a4-8e4f4bcf5833",
+  "ttft_stream_ms": 1686,
+  "time_to_request_ms": 40,
+  "first_content_frame_ms": 1686,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

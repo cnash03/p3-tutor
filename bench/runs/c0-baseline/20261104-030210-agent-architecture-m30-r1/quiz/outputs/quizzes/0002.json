@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Control flow means deciding which step runs next. In which design of the makerspace assistant does the program's code, not the model, own the control flow?",
+      "options": [
+        {"id": "a", "text": "The model chooses one of three tools each turn and decides when to stop"},
+        {"id": "b", "text": "The model reads each tool result and decides which tool to call next"},
+        {"id": "c", "text": "Code always runs search_manuals, then hands the pages to the model to write the answer"},
+        {"id": "d", "text": "The model plans its own sequence of tool calls and ends the loop when done"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request follows the same steps: check the calendar, book the slot if it is free, then send a confirmation. The steps and their order are known in advance. How should you build this part of the assistant?",
+      "options": [
+        {"id": "a", "text": "As an agent, because it calls tools, and any system that calls tools is an agent"},
+        {"id": "b", "text": "As a fixed workflow, because the steps and their order are known ahead of time"},
+        {"id": "c", "text": "As an agent, because letting the model choose each step is always more reliable"},
+        {"id": "d", "text": "As a fixed workflow, because a workflow never needs to call a language model"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, what is the difference between a workflow and an agent?"
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Booking requests can be handled by a fixed workflow that makes exactly 2 model calls per request, or by an agent that averages 5 model calls per request. Assume every model call costs $0.01. For 200 requests, how much more does the agent cost than the workflow, in dollars?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which request to the makerspace assistant best justifies using an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "\"Cancel my booking, number 4471\", which always means look it up, then delete it"},
+        {"id": "b", "text": "\"What are the makerspace's opening hours?\", answered from one fixed page"},
+        {"id": "c", "text": "\"Email me a reminder the day before each of my bookings\", sent on a schedule"},
+        {"id": "d", "text": "\"I need 20 acrylic parts by Friday, so what machine, training and slots do I need?\""}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Name one advantage a fixed workflow has over an agent when the steps of a task are known in advance."
+    }
+  ]
+}

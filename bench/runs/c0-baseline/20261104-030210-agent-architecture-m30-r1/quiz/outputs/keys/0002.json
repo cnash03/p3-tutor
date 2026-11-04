@@ -1,0 +1,52 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In a workflow, code written in advance fixes the sequence of steps; the model only does work inside a step (here, writing the answer). In options a, b and d the model chooses the next tool or when to stop, which means the model owns the control flow, so those are agents."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "When the steps and their order are known, a fixed workflow is the better choice: it is cheaper, faster and more predictable. An 'if free' check is still a branch written in code, so it does not make the system an agent. Using tools does not make a system an agent (a); an agent is not always more reliable, since it can wander or loop (c); and a workflow can contain model calls, because what defines it is that code owns the order (d).",
+      "distractors": {"a": "M7", "c": "M8", "d": "M9"}
+    },
+    {
+      "id": "q3",
+      "answer": "In a workflow, code written in advance decides the sequence of steps; in an agent, the model decides what to do next.",
+      "accepted": [
+        "In a workflow the code controls the steps, in an agent the model does.",
+        "A workflow follows a predefined path set by code, while an agent lets the model choose its own steps.",
+        "Workflows have a fixed sequence set by the programmer; agents let the model direct the process."
+      ],
+      "rationale": "The distinction is who owns the control flow: code (workflow) or the model (agent). Saying only that agents use tools, are smarter or use bigger models is wrong, since workflows can use tools and models too (M7). Giving the owner for only one of the two is partial."
+    },
+    {
+      "id": "q4",
+      "answer": 6,
+      "tolerance": 0,
+      "rationale": "The difference is 5 - 2 = 3 extra calls per request. 3 calls x $0.01 x 200 requests = $6. An answer of 2 or 10 comes from taking the total for one design instead of the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "An agent pays off when the path cannot be written in advance: the request needs the model to look at what comes back and choose what to check next. Options a, b and c each follow one known sequence, so a fixed workflow would be cheaper and more predictable. All of them use tools, so tool use does not decide the question (M7).",
+      "distractors": {"a": "M7", "b": "M8", "c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": "It is cheaper, faster and more predictable, because it makes fewer model calls and cannot wander off or loop.",
+      "accepted": [
+        "cheaper",
+        "lower cost",
+        "faster",
+        "more predictable",
+        "more reliable",
+        "fewer model calls",
+        "it can't loop or wander off"
+      ],
+      "rationale": "Any one of lower cost (fewer model calls), lower latency, predictability or reliability (the path is fixed, so it cannot loop or choose a wrong step) is correct. Saying a workflow is more flexible, or can handle open-ended requests better, is wrong: that is an agent's strength (M8)."
+    }
+  ]
+}

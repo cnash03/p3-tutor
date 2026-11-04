@@ -1,0 +1,43 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 4,
+      "tolerance": 0,
+      "rationale": "The result is added after call 2, so it is in the input of calls 3, 4, 5 and 6: four calls. Each call re-sends the whole history, which is why a large tool result is paid for repeatedly. Answering 1 treats the model as reading it once; 5 or 6 miscounts which calls come after the result."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The model keeps nothing between calls or sessions. A new chat starts with a fresh context, so Monday is available only if the program saved it and loaded it back. Fading memory (a) assumes the model remembers by default; a window that is too small (c) confuses within-session capacity with storage across sessions; and (d) assumes models learn from individual chats.",
+      "distractors": {"a": "M3", "c": "M8", "d": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "An exact code such as E-47 is a precise string, which keyword search (such as BM25) matches reliably; embeddings, which capture meaning, can miss exact identifiers. Answering from the model's memory risks a confident wrong answer because the model does not hold this manual.",
+      "distractors": {"a": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": "Putting everything in every request would not fit or would cost far more on every call, and a crowded context makes the model recall less accurately; retrieving a few relevant pages keeps the context small and focused.",
+      "accepted": [
+        "It is cheaper and more accurate: all the manuals would exceed the window or cost a lot each call, and too much context hurts the model's recall.",
+        "Too many tokens: it costs more on every call and the model gets worse at using a huge context, so only the relevant pages should go in."
+      ],
+      "rationale": "Full credit names at least one real reason (it will not fit, or it costs more per call, or accuracy drops as the context grows); two reasons is better. Saying only that the model cannot read manuals, or that retrieval is faster, is partial or wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "Summarise the conversation so far (compaction) and start a new context with the summary, or save notes outside the window and reload them as needed.",
+      "accepted": [
+        "Compact the context",
+        "Summarise the history and continue in a fresh context",
+        "Write notes to storage and read them back later",
+        "Hand part of the task to a sub-agent with its own clean context that returns a short summary"
+      ],
+      "rationale": "Any of compaction (summarise and restart with the summary), structured notes saved outside the window, or a sub-agent with a clean context is correct. Answering that the model should just keep going, or that a bigger window is the only fix, does not address how to carry the important points forward."
+    }
+  ]
+}
