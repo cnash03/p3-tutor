@@ -18,11 +18,20 @@ An example of a finished entry:
 - Kept in final: yes
 -->
 
-### TODO: the component's name
+### grade
 
-- Kind: TODO
-- Step added: TODO
+- Kind: skill
+- Step added: c1-skills
 - Purpose: TODO
-- With and without: TODO
+- With and without: reviews/c1-skills.md, Round 1 (without) and Round 2 (with)
+- Review: TODO
+- Kept in final: TODO
+
+### teach
+
+- Kind: skill
+- Step added: c1-skills
+- Purpose: TODO
+- With and without: reviews/c1-skills.md, Round 2 (without) and Round 3 (with)
 - Review: TODO
 - Kept in final: TODO

@@ -113,11 +113,19 @@ Read `references/LESSONS.md` and `references/lesson-template.html`, then the tit
    When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes, declare it in `p3-minutes`, and say in your message that the learner can ask for a shorter or longer lesson.
 2. **Find the knowledge:** search the web for high-trust sources on exactly this objective, read the best two or three, and choose the single best one as the lesson's primary source.
    Add the sources to `RESOURCES.md` in the format in `references/RESOURCES-FORMAT.md`.
-3. **Plan to the minutes:** split the lesson into sections with a word budget for each, as `references/LESSONS.md` explains, so the whole lesson fits the requested length.
-4. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `FORMATS.md` and the template: beautiful and self-contained, with figures, worked examples, practice with immediate feedback, and citations.
-5. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
-6. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
-7. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
+3. **Break the objective into small pieces:** list the separate ideas or steps the objective needs, each one small enough to state in a sentence and practice on its own, in the order they build on each other.
+   A hard idea becomes two or three pieces, never one long section.
+4. **Plan to the minutes:** give each piece its own section with a word budget, as `references/LESSONS.md` explains, so the whole lesson fits the requested length.
+   Spend the budget on examples and exercises before explanation: when the length allows more, add another example or exercise, not more prose.
+5. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `FORMATS.md` and the template: beautiful and self-contained, with figures and citations, and every section built the same way:
+   1. **One concrete example first,** worked step by step, with real values or a real scenario, before the general idea; every number or value in it can be traced to where it came from.
+   2. **The idea in one or two plain sentences,** and why it holds.
+   3. **A second, different example:** a different setting from the first (another kind of system, another everyday case, an edge case or a case where the idea does not apply), so the learner sees what stays the same and what changes.
+   4. **A short exercise the learner does,** with feedback on demand that says why the right answer is right and why each tempting wrong answer is wrong.
+   After the sections, one exercise that combines the pieces, with the steps faded, then a checklist the learner can reuse on any new case.
+6. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
+7. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
+8. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
    Never put a quiz answer in the message.
 
 ## Quiz
